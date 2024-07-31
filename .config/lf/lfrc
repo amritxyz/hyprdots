@@ -1,0 +1,72 @@
+# Basic Settings
+set hidden true
+set ignorecase true
+set icons true
+set scrolloff 10
+set autoquit true
+
+cmd open &{{
+	case $(file --mime-type -Lb $f) in
+		text/*) lf -remote "send $id \$nvim \$fx";;
+		*) xdg-open "$f"
+	esac
+}}
+
+cmd extract ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	printf "%s\n\t" "$fx"
+	printf "extract?[y/N]"
+	read ans
+	[ $ans = "y" ] && {
+		case $fx in
+			*.tar.bz2)   tar xjf $fx     ;;
+			*.tar.gz)    tar xzf $fx     ;;
+			*.bz2)       bunzip2 $fx     ;;
+			*.rar)       unrar e $fx     ;;
+			*.gz)        gunzip $fx      ;;
+			*.tar)       tar xf $fx      ;;
+			*.tbz2)      tar xjf $fx     ;;
+			*.tgz)       tar xzf $fx     ;;
+			*.zip)       unzip $fx       ;;
+			*.Z)         uncompress $fx  ;;
+			*.7z)        7z x $fx        ;;
+			*.tar.xz)    tar xf $fx      ;;
+		esac
+	}
+}}
+
+# Bindings
+map c
+map d
+map m
+
+map co $nvim "$f"
+map cf $dotbare fadd -f
+
+map zi extract
+map ae $wine "$f"
+
+# Basic Functions
+map . set hidden!
+map dd delete
+
+# map u $trashy restore -r 0
+map dr $trashy restore
+map de $trashy empty --all
+map p paste
+map x cut
+map y copy
+map <enter> open
+map R reload
+map mf mkfile
+map md mkdir
+map <esc> clear
+
+# Movement
+map gc cd ~/.config
+map gn cd ~/.local/notes
+map gd cd ~/.local/dev
+map gi cd ~/.local/img
+map gm cd ~/.local/music
+map gs cd ~/.local/share/

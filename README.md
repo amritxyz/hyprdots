@@ -13,7 +13,7 @@ instructions for installing a list of packages using the `pacman` package manage
 Before installing new packages, it's recommended to update your package databases:
 
 ```bash
-sudo pacman -Syu && sudo pacman -S brightnessctl foot hyprpaper imv lf mpv neovim ttf-hack ttf-hack-nerd waybar bleachbit fastfetch unzip hyprlock newsboat
+sudo pacman -Syu && sudo pacman -S brightnessctl foot hyprpaper imv lf mpv neovim ttf-hack ttf-hack-nerd waybar bleachbit fastfetch unzip hyprlock newsboat mupdf
 ```
 ## 2. ly display manager
 - A Terminal Window Manager

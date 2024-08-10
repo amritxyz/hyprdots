@@ -5,29 +5,55 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
+# Environment variables
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+#export PATH="$PATH:$HOME/.local/bin"
+
+# Prompt configuration
+PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
+
+# LS_COLORS configuration
+export LS_COLORS='di=1;34:fi=0:ln=0;36:ex=0;32:'
+eval "$(dircolors -b)"
+
+# Shell options and settings
+shopt -s autocd
+stty -ixon
+#set -o vi
+
+# Aliases
 alias grep='grep --color=auto'
-PS1='[\u@\h \W]\$ '
-
-# set -o vi
-
+alias ls='ls --color=auto'
+alias l='ls -l --color=auto'
+alias la='ls -a --color=auto'
+alias ll='ls -la --color=auto'
+alias hs='cd $HOME/.local/hugo-dir && ls -a'
+alias hss='hugo server --noHTTPCache'
+alias ..='cd .. && ls -a'
+alias ...='cd ../../ && ls -a'
+alias yta-aac="yt-dlp --extract-audio --audio-format aac "
+alias yta-best="yt-dlp --extract-audio --audio-format best "
+alias yta-flac="yt-dlp --extract-audio --audio-format flac "
+alias yta-mp3="yt-dlp --extract-audio --audio-format mp3 "
+alias ytv-best="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 "
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
+alias mkdir='mkdir -p'
 alias ff='fastfetch'
 alias h='cd $HOME/ && ls -a'
 alias cf='cd $HOME/.config && ls -a'
 alias rr='cd $HOME/.config/hypr/ && ls -a'
 alias dev='cd $HOME/.local/dev/ && ls -a'
 alias mu='cd $HOME/.local/music/ && ls -a'
-alias ww='cd $HOME/.local/share/wall/ && ls -a'
+alias wal='cd $HOME/.local/share/wall/ && ls -a'
 alias img='cd $HOME/.local/img && ls -la'
 alias lab='cat $HOME/.local/share/lab'
 alias hub='cat $HOME/.local/share/hub'
 
 # Helpful aliases
 alias  c='clear'
-alias  l='ls -l'
-alias ls='ls'
-alias la='ls -a'
-alias ll='ls -la'
 alias ld='tree'
 alias lt='tree'
 alias un='sudo pacman -Rncsu'
@@ -37,29 +63,8 @@ alias pa='yay -Ss' # list availabe package
 alias pc='yay -Sc' # remove unused cache
 alias po='yay -Qtdq | yay -Rncsu -'
 
-#youtube download
-alias yta-aac="yt-dlp --extract-audio --audio-format aac "
-alias yta-best="yt-dlp --extract-audio --audio-format best "
-alias yta-flac="yt-dlp --extract-audio --audio-format flac "
-alias yta-mp3="yt-dlp --extract-audio --audio-format mp3 "
-alias ytv-best="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 "
-
-# NeoVim
-alias v='nvim'
-alias vi='nvim'
-alias vim='nvim'
-
 # Camera
 alias cam='mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)'
-
-# change dir shortcuts
-alias ..='cd ..'
-alias ...='cd ../..'
-alias .3='cd ../../..'
-alias .4='cd ../../../..'
-alias .5='cd ../../../../..'
-
-alias mkdir='mkdir -p'
 
 # git aliases
 alias g="git"
@@ -78,7 +83,7 @@ alias grs="git restore --staged ."
 alias gre="git restore"
 alias gr="git remote"
 alias gcl="git clone"
-alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
 alias gt="git ls-tree -r master --name-only"
 alias gb="git branch"
 alias gf="git fetch"
+alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"

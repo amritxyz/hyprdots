@@ -55,12 +55,9 @@ alias hub='cat $HOME/.local/share/hub'
 # Helpful aliases
 alias  c='clear'
 alias ld='tree'
-alias lt='tree'
 alias un='sudo pacman -Rncsu'
-alias up='sudo pacman -Sy' # update system
-alias pl='pacman -Qt' # list installed package
-alias pa='yay -Ss' # list availabe package
-alias pc='yay -Sc' # remove unused cache
+alias pl='pacman -Qt'
+alias pc='yay -Scc'
 alias po='yay -Qtdq | yay -Rncsu -'
 
 # Camera

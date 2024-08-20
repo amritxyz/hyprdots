@@ -33,6 +33,7 @@ color: #c4c4c4;
 background-color: #000010;
 }
 /* Add rounded corners to the Wofi window */
-window {
-    border-radius: 5px; /* 10px radius for rounded corners */
+#window {
+	background: rgba(30,30,46,0.6);
+	border: none;
 }

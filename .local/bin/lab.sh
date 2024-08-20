@@ -1,1 +1,1 @@
-wtype $(grep -v '^#' ~/.local/share/lab | dmenu -i -l 50 | cut -d' ' -f1)
+wtype $(grep -v '^#' ~/.local/share/lab | wofi --dmenu --lines 10 | cut -d' ' -f1)

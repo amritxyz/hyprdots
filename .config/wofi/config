@@ -1,6 +1,6 @@
 allow_images=false
-width=20%
-height=27%
+width=30%
+height=30%
 location=center
 show=drun
 prompt=Search...

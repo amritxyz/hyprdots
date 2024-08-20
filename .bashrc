@@ -1,4 +1,6 @@
+#
 # ~/.bashrc
+#
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -6,7 +8,6 @@
 # Environment variables
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
-export PATH="$PATH:$HOME/.local/bin"
 
 # Prompt configuration
 PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
@@ -27,32 +28,38 @@ alias ls='ls --color=auto'
 alias l='ls -l --color=auto'
 alias la='ls -a --color=auto'
 alias ll='ls -la --color=auto'
-alias ld='tree'
-alias c='clear'
-alias rr='cd $HOME/.local/src/arch-dwm && ls -a'
-alias h='cd $HOME/ && ls -a'
-alias cf='cd $HOME/.config && ls -a'
-alias wal='cd $HOME/.local/share/void-wall && ls -a'
-alias mu='cd $HOME/.local/music && ls -a'
-alias dl='cd $HOME/.local/dl && ls -a'
-alias dev='cd $HOME/.local/dev && ls -a'
-alias img='cd $HOME/.local/img && ls -a'
-alias gitr='cd $HOME/.local/git-repos && ls -a'
 alias hs='cd $HOME/.local/hugo-dir && ls -a'
 alias hss='hugo server --noHTTPCache'
-alias ff='fastfetch'
-alias pc='sudo pacman -Scc'
 alias ..='cd .. && ls -a'
 alias ...='cd ../../ && ls -a'
-alias yta-aac="yt-dlp --extract-audio --audio-format aac "
-alias yta-best="yt-dlp --extract-audio --audio-format best "
-alias yta-flac="yt-dlp --extract-audio --audio-format flac "
-alias yta-mp3="yt-dlp --extract-audio --audio-format mp3 "
-alias ytv-best="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 "
+alias yta-aac="yt-dlp --extract-audio --audio-format aac"
+alias yta-best="yt-dlp --extract-audio --audio-format best"
+alias yta-flac="yt-dlp --extract-audio --audio-format flac"
+alias yta-mp3="yt-dlp --extract-audio --audio-format mp3"
+alias ytv-best="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4"
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
 alias mkdir='mkdir -p'
+alias ff='fastfetch'
+alias cf='cd $HOME/.config && ls -a'
+alias rr='cd $HOME/.config/hypr/ && ls -a'
+alias dl='cd $HOME/.local/dl/ && ls -a'
+alias dev='cd $HOME/.local/dev/ && ls -a'
+alias mu='cd $HOME/.local/music/ && ls -a'
+alias wal='cd $HOME/.local/share/wall/ && ls -a'
+alias img='cd $HOME/.local/img && ls -la'
+
+# Helpful aliases
+alias c='clear'
+alias ld='tree'
+alias un='sudo pacman -Rncsu'
+alias pl='pacman -Qt'
+alias pc='yay -Scc'
+alias po='yay -Qtdq | yay -Rncsu -'
+
+# Camera
+alias cam='mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)'
 
 # Git aliases
 alias g="git"
@@ -74,4 +81,4 @@ alias gcl="git clone"
 alias gt="git ls-tree -r master --name-only"
 alias gb="git branch"
 alias gf="git fetch"
-alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n%  C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold green)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold yellow)(%ar)%C(reset)%C(auto)%d%C(reset)%n          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"

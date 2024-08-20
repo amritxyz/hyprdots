@@ -10,9 +10,9 @@ get_device_list() {
     bluetoothctl devices | awk -F ' ' '{print $3 " " $2}'
 }
 
-# Display devices using dmenu and get the selected device name
+# Display devices using wofi and get the selected device name
 device_list=$(get_device_list)
-selected_device=$(echo "$device_list" | dmenu -l 10 | awk '{print $1}')
+selected_device=$(echo "$device_list" | wofi --dmenu -lines 10 | awk '{print $1}')
 if [ -z "$selected_device" ]; then
     echo "No device selected."
     exit 1

@@ -12,7 +12,7 @@ get_device_list() {
 
 # Display devices using wofi and get the selected device name
 device_list=$(get_device_list)
-selected_device=$(echo "$device_list" | wofi --dmenu -lines 10 | awk '{print $1}')
+selected_device=$(echo "$device_list" | wofi --dmenu --lines 2 | awk '{print $1}')
 if [ -z "$selected_device" ]; then
     echo "No device selected."
     exit 1

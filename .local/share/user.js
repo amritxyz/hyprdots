@@ -727,7 +727,7 @@ user_pref("webgl.disabled", true);
 // >>>>>>>>>>>>>>>>>>>>>
 //
 // Start Firefox in PB (Private Browsing) mode
-// user_pref("browser.privatebrowsing.autostart", true);
+user_pref("browser.privatebrowsing.autostart", true);
 // -------------------------------------
 // Disable memory cache
 // capacity: -1=determine dynamically (default), 0=none, n=memory capacity in kibibytes

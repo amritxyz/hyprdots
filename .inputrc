@@ -23,5 +23,5 @@ set echo-control-characters off
 # Bash Keybindings
 "\C-f":"cd $HOME/.config/"
 "\C-b":"cd ..\n"
-"\C-h":"cd ~\n"
+#"\C-h":"cd ~\n"
 "\C-s": "\C-asudo \C-e"

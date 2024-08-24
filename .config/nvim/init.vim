@@ -111,6 +111,9 @@ colorscheme vim
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo!\|x!<CR>
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo!\|q!<CR>
 
+" Map Ctrl+Z to :q!
+	nnoremap <C-z> :q!<CR>
+
 " Automatically deletes all trailing whitespace and newlines at end of file on save. & reset cursor position
  	autocmd BufWritePre * let currPos = getpos(".")
 	autocmd BufWritePre * %s/\s\+$//e

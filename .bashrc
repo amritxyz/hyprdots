@@ -49,6 +49,7 @@ alias dev='cd $HOME/.local/dev/ && ls -a'
 alias mu='cd $HOME/.local/music/ && ls -a'
 alias wal='cd $HOME/.local/share/wall/ && ls -a'
 alias img='cd $HOME/.local/img && ls -la'
+alias gitr='cd $HOME/.local/git-repos && ls -la'
 
 # Helpful aliases
 alias c='clear'

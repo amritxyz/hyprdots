@@ -8,6 +8,7 @@
 # Environment variables
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
+export PATH="$PATH:$HOME/.local/bin"
 
 # Prompt configuration
 PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
@@ -20,7 +21,7 @@ eval "$(dircolors -b)"
 shopt -s autocd
 stty -ixon
 HISTSIZE= HISTFILESIZE= # Infinite history.
-#set -o vi
+set -o vi
 
 # Aliases
 alias grep='grep --color=auto'

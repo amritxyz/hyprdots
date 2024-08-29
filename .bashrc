@@ -4,6 +4,7 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+[ "$(fgconsole 2>/dev/null)" -eq 1 ] && exec Hyprland > /dev/null 2>&1
 
 # Environment variables
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -54,7 +55,7 @@ alias gitr='cd $HOME/.local/git-repos && ls -la'
 
 # Helpful aliases
 alias c='clear'
-alias ld='tree'
+#alias ld='tree'
 alias un='sudo pacman -Rncsu'
 alias pl='pacman -Qt'
 alias pc='yay -Scc'

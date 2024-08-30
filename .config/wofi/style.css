@@ -30,7 +30,7 @@ color: #c4c4c4;
 }
 
 #entry:selected {
-background-color: #000010;
+background-color: rgba(0, 0, 0, 0.1)
 }
 /* Add rounded corners to the Wofi window */
 #window {

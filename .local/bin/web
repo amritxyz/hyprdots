@@ -1,0 +1,16 @@
+#!/bin/bash
+
+PORT=8000
+PROGRAM="python3 -m http.server"
+
+# Kill existing Python HTTP server processes
+pkill -f "$PROGRAM"
+
+# Start a new HTTP server
+python3 -m http.server $PORT &
+
+# Get the URL to open
+URL="http://localhost:$PORT"
+
+# Open the URL in Firefox
+firefox "$URL" &

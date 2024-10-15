@@ -9,18 +9,36 @@
 //
 // License   : https://git.nixnet.services/Narsil/desktop_user.js/raw/branch/master/LICENSE
 //
+// *********************
+// My changes
+// *********************
+// ***************************************************************************************
+// Set compact density
+user_pref("browser.uidensity", 1); // 0 = default, 1 = compact, 2 = touch
+//
+// Disable animations
+user_pref("toolkit.cosmeticAnimations.enabled", false);
+//
+// Adjust the default zoom level
+user_pref("zoom.minPercent", 30);
+user_pref("zoom.maxPercent", 300);
+//
+// Start Firefox in PB (Private Browsing) mode
+user_pref("browser.privatebrowsing.autostart", true);
+// ***************************************************************************************
+//
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// START: internal custom pref to test for syntax error
+// >>>>>>>>>>>>>>>>>>>>>
+//
 // Disable about:config warning
 user_pref("browser.aboutConfig.showWarning", false);
 //
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // STARTUP
 // >>>>>>>>>>>>>>>>>>>>>
-// Search in New tab
-// Disable location bar using search
-user_pref("keyword.enabled", false);
-// -------------------------------------
+//
 // Disable default browser check
-user_pref("browser.compactmode.show", true);
 user_pref("browser.shell.checkDefaultBrowser", false);
 // -------------------------------------
 // Set startup page
@@ -46,6 +64,7 @@ user_pref("browser.topsites.useRemoteSetting", false);
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // GEOLOCATION
 // >>>>>>>>>>>>>>>>>>>>>
+//
 //
 // Use Mozilla geolocation service instead of Google if permission is granted [FF74+]
 user_pref("geo.provider.network.url", "");
@@ -259,7 +278,7 @@ user_pref("network.prefetch-next", false);
 // -------------------------------------
 // Disable DNS prefetching
 user_pref("network.dns.disablePrefetch", true);
-// user_pref("network.dns.disablePrefetchFromHTTPS", true); // [DEFAULT: true]
+user_pref("network.dns.disablePrefetchFromHTTPS", true);
 // -------------------------------------
 // Disable predictor / prefetching
 user_pref("network.predictor.enabled", false);
@@ -309,9 +328,9 @@ user_pref("network.trr.custom_uri", "");
 user_pref("browser.urlbar.speculativeConnect.enabled", false);
 // -------------------------------------
 // Disable location bar contextual suggestions
-// user_pref("browser.urlbar.quicksuggest.enabled", false); // [FF92+] [DEFAULT: false]
-// user_pref("browser.urlbar.suggest.quicksuggest.nonsponsored", false); // [FF95+] [DEFAULT: false]
-// user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false); // [FF92+] [DEFAULT: false]
+user_pref("browser.urlbar.quicksuggest.enabled", false); // [FF92+]
+user_pref("browser.urlbar.suggest.quicksuggest.nonsponsored", false); // [FF95+]
+user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false); // [FF92+]
 // -------------------------------------
 // Disable live search suggestions
 user_pref("browser.search.suggest.enabled", false);
@@ -329,6 +348,9 @@ user_pref("browser.urlbar.yelp.featureGate", false); // [FF124+] [DEFAULT: false
 // -------------------------------------
 // Disable urlbar clipboard suggestions [FF118+]
 user_pref("browser.urlbar.clipboard.featureGate", false);
+// -------------------------------------
+// Disable recent searches [FF120+]
+user_pref("browser.urlbar.recentsearches.featureGate", false);
 // -------------------------------------
 // Disable search and form history
 user_pref("browser.formfill.enable", false);
@@ -557,7 +579,9 @@ user_pref("pdfjs.enableScripting", false); // [FF86+]
 user_pref("browser.tabs.searchclipboardfor.middleclick", false); // [DEFAULT: false NON-LINUX]
 // -------------------------------------
 // Disable content analysis by DLP (Data Loss Prevention) agents
-user_pref("browser.contentanalysis.default_allow", false); // [FF124+] [DEFAULT: false]
+// 0=Block all requests, 1=Warn on all requests (which lets the user decide), 2=Allow all requests
+user_pref("browser.contentanalysis.enabled", false); // [FF121+] [DEFAULT: false]
+user_pref("browser.contentanalysis.default_result", 0); // [FF127+] [DEFAULT: 0]
 // -------------------------------------
 // Disable the default checkedness for "Save card and address to Firefox" checkboxes
 user_pref("dom.payments.defaults.saveAddress", false);
@@ -677,40 +701,40 @@ user_pref("privacy.sanitize.timeSpan", 0);
 // Set global FPP overrides [FF114+]
 // user_pref("privacy.fingerprintingProtection.overrides", "");
 // -------------------------------------
+// Set granular FPP overrides
+// user_pref("privacy.fingerprintingProtection.granularOverrides", "");
+// -------------------------------------
 // Disable remote FPP overrides [FF127+]
 // user_pref("privacy.fingerprintingProtection.remoteOverrides.enabled", false);
 //
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// RFP (resistFingerprinting)
+// OPTIONAL RFP (resistFingerprinting)
 // >>>>>>>>>>>>>>>>>>>>>
 //
 // Enable RFP
 user_pref("privacy.resistFingerprinting", true); // [FF41+]
 // user_pref("privacy.resistFingerprinting.pbmode", true); // [FF114+]
 // -------------------------------------
-// Set new window size rounding max values [FF55+]
+// Set RFP new window size max rounded values [FF55+]
 user_pref("privacy.window.maxInnerWidth", 1400);
 user_pref("privacy.window.maxInnerHeight", 900);
 // -------------------------------------
 // Disable mozAddonManager Web API [FF57+]
 user_pref("privacy.resistFingerprinting.block_mozAddonManager", true);
 // -------------------------------------
-// Enable RFP letterboxing [FF67+]
+// Enable letterboxing [FF67+]
 // user_pref("privacy.resistFingerprinting.letterboxing", true); // [HIDDEN PREF]
 // user_pref("privacy.resistFingerprinting.letterboxing.dimensions", ""); // [HIDDEN PREF]
 // -------------------------------------
-// Experimental RFP [FF91+]
+// Disable RFP by domain [FF91+]
 // user_pref("privacy.resistFingerprinting.exemptedDomains", "*.example.invalid");
 // -------------------------------------
 // Enable RFP spoof english prompt [FF59+]
-// 0=prompt, 1=disabled, 2=enabled (requires RFP)
+// 0=prompt, 1=disabled, 2=enabled
 user_pref("privacy.spoof_english", 2);
 // -------------------------------------
 // Disable using system colors
 user_pref("browser.display.use_system_colors", false); // [DEFAULT: false NON-WINDOWS]
-// -------------------------------------
-// Enforce non-native widget theme
-user_pref("widget.non-native-theme.enabled", true); // [DEFAULT: true]
 // -------------------------------------
 // Enforce links targeting new windows to open in a new tab instead
 // 1=most recent window or tab, 2=new window, 3=new tab
@@ -725,9 +749,6 @@ user_pref("webgl.disabled", true);
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // OPTIONAL OPSEC
 // >>>>>>>>>>>>>>>>>>>>>
-//
-// Start Firefox in PB (Private Browsing) mode
-user_pref("browser.privatebrowsing.autostart", true);
 // -------------------------------------
 // Disable memory cache
 // capacity: -1=determine dynamically (default), 0=none, n=memory capacity in kibibytes
@@ -794,6 +815,9 @@ user_pref("extensions.formautofill.creditCards.enabled", false); // [FF56+]
 // Disable Windows native notifications and use app notications instead [FF111+] [WINDOWS]
 // user_pref("alerts.useSystemBackend.windows.notificationserver.enabled", false);
 // -------------------------------------
+// Disable location bar using search
+user_pref("keyword.enabled", false);
+// -------------------------------------
 // Force GPU sandboxing (Linux, default on Windows)
 user_pref("security.sandbox.gpu.level", 1);
 // -------------------------------------
@@ -823,7 +847,7 @@ user_pref("gfx.font_rendering.graphite.enabled", false);
 // Disable asm.js [FF22+]
 user_pref("javascript.options.asmjs", false);
 // -------------------------------------
-// Disable Ion and baseline JIT to harden against JS exploits
+// Disable Ion and baseline JIT to harden against JS exploits [RESTART]
 user_pref("javascript.options.ion", false);
 user_pref("javascript.options.baselinejit", false);
 user_pref("javascript.options.jit_trustedprincipals", true); // [FF75+] [HIDDEN PREF]
@@ -888,7 +912,7 @@ user_pref("extensions.webcompat-reporter.enabled", false); // [DEFAULT: false]
 // Disable Quarantined Domains [FF115+]
 user_pref("extensions.quarantinedDomains.enabled", false); // [DEFAULT: true]
 // -------------------------------------
-// prefsCleaner: previously active items removed from arkenfox 115-117
+// prefsCleaner: previously active items removed from arkenfox 115-127
 // user_pref("accessibility.force_disabled", "");
 // user_pref("browser.urlbar.dnsResolveSingleWordsAfterSearch", "");
 // user_pref("network.protocol-handler.external.ms-windows-store", "");
@@ -1104,6 +1128,8 @@ user_pref("browser.tabs.firefox-view", false); // Firefox-view
 // OTHER
 //
 // user_pref("browser.bookmarks.max_backups", 2);
+user_pref("security.tls.enable_kyber", true);
+user_pref("network.http.http3.enable_kyber", true);
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false); // disable CFR [FF67+]
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false); // disable CFR [FF67+]
 user_pref("browser.urlbar.showSearchTerms.enabled", false);
@@ -1168,4 +1194,12 @@ user_pref("browser.ping-centre.telemetry", false);
 //
 // Disable What's New toolbar icon [FF69+]
 user_pref("browser.messaging-system.whatsNewPanel.enabled", false);
+//
+// FF127
+//
+// Disable content analysis by DLP (Data Loss Prevention) agents - replaced by default_result
+user_pref("browser.contentanalysis.default_allow", false);
+// -------------------------------------
+// Enforce non-native widget theme
+user_pref("widget.non-native-theme.enabled", true); // [DEFAULT: true]
 //

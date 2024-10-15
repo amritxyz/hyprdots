@@ -20,10 +20,9 @@ set echo-control-characters off
 "\e[1;5D": backward-word
 "\e[1;5C": forward-word
 
-
 # Bash Keybindings
-"\C-f":"cd $HOME/.config/"
-"\C-b":"cd ..\n"
-"\C-s": "\C-asudo \C-e"
+# "\C-f":"cd $HOME/.config/"
+# "\C-b":"cd ..\n"
+# "\C-s": "\C-asudo \C-e"
 #"\C-h":"cd ~\n"
 #"\C-l": "clear_insert\n"

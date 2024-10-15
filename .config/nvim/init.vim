@@ -73,6 +73,15 @@ colorscheme vim
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
 
+" Some extra binds i like
+	nnoremap <C-n> :vsplit <C-r>=expand("%:p:h") . "/"<CR>
+	nnoremap <S-n> :split <C-r>=expand("%:p:h") . "/"<CR>
+	nnoremap <S-h> :vertical resize +5<CR>
+	nnoremap <S-l> :vertical resize -5<CR>
+	nnoremap <S-k> :resize +2<CR>
+	nnoremap <S-j> :resize -2<CR>
+	nnoremap <C-s> :r ~/.config/nvim/snippets/<C-d>
+
 " Replace ex mode with gq
 	map Q gq
 
@@ -110,9 +119,6 @@ colorscheme vim
 	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo 80 | call feedkeys("jk")
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo!\|x!<CR>
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo!\|q!<CR>
-
-" Map Ctrl+Z to :q!
-	nnoremap <C-z> :q!<CR>
 
 " Automatically deletes all trailing whitespace and newlines at end of file on save. & reset cursor position
  	autocmd BufWritePre * let currPos = getpos(".")

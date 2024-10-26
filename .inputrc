@@ -24,5 +24,5 @@ set echo-control-characters off
 # "\C-f":"cd $HOME/.config/"
 # "\C-b":"cd ..\n"
 # "\C-s": "\C-asudo \C-e"
-#"\C-h":"cd ~\n"
-#"\C-l": "clear_insert\n"
+# "\C-h":"cd ~\n"
+# "\C-l": "clear_insert\n"

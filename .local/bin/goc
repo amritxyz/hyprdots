@@ -1,0 +1,10 @@
+#!/bin/sh
+
+[ "$#" -ne 1 ] && echo "Usage: go <GoSourceFile.go>" && exit 1
+
+input_file="$1"
+output_file="${input_file%.go}.out"
+
+[ ! -f "$input_file" ] && echo "Error: '$input_file' not found!" && exit 1
+
+go build -o "$output_file" "$input_file"

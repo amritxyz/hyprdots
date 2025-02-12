@@ -7,23 +7,23 @@ set autoquit true
 
 # Custom Functions
 cmd mkdir ${{
-  printf "Directory Name: "
-  read ans
-  mkdir $ans
+	printf "Directory Name: "
+		read ans
+		mkdir $ans
 }}
 
 cmd mkfile ${{
-  printf "File Name: "
-  read ans
-  nvim $ans
+	printf "File Name: "
+		read ans
+		nvim $ans
 }}
 
 cmd open &{{
 	case $(file --mime-type -Lb $f) in
 		text/*) lf -remote "send $id \$nvim \$fx";;
-		image/*) imv "$f";;
+		image/*) nsxiv "$f";;
 		audio/*|video/*|application/ogg) mpv --force-window "$f";;
-		application/pdf|image/vnd.djvu|application/x-cbr|application/x-cbz|application/x-comic|application/x-comic+zip) mupdf "$f";;
+		application/pdf|image/vnd.djvu|application/x-cbr|application/x-cbz|application/x-comic|application/x-comic+zip) zathura "$f";;
 		application/vnd.oasis.opendocument.*|application/vnd.ms-office|application/vnd.openxmlformats-officedocument.*|application/vnd.sun.xml.*) libreoffice "$f";;
 		*) xdg-open "$f"
 	esac
@@ -33,7 +33,7 @@ cmd extract ${{
 	clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
 	printf "%s\n\t" "$fx"
-	printf "extract?[y/N]"
+	printf "extract? [y/N] "
 	read ans
 	[ $ans = "y" ] && {
 		case $fx in
@@ -58,11 +58,7 @@ map c
 map d
 map m
 
-map co $nvim "$f"
-map cf $dotbare fadd -f
-
 map zi extract
-map ae $wine "$f"
 
 # Basic Functions
 map . set hidden!
@@ -78,12 +74,22 @@ map <enter> open
 map R reload
 map mf mkfile
 map md mkdir
+map me $chmod +x "$f"
 map <esc> clear
 
 # Movement
 map gc cd ~/.config
-map gn cd ~/.local/notes
+map gb cd ~/.local/bin
+map gn cd ~/.local/dox/notes
+map gk cd ~/.local/dox/books
 map gd cd ~/.local/dev
 map gi cd ~/.local/img
 map gm cd ~/.local/music
-map gs cd ~/.local/share/
+map ga cd ~/.local/audio
+map gv cd ~/.local/vids
+map gs cd ~/.local/share
+map gr cd ~/.local/git-repos
+map gw cd ~/.local/share/void-wall
+map gp cd ~/.local/practice
+map gl cd ~/.local/dl
+map gx cd ~/.local/dox

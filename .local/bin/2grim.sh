@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directory to save screenshots
-SAVE_DIR=~/.local/img
+SAVE_DIR=~/.local/ss
 
 if [ ! -d "$SAVE_DIR" ]; then
     mkdir -p "$SAVE_DIR"

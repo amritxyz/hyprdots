@@ -1,0 +1,44 @@
+#!/bin/bash
+# Target directory
+TARGET_DIR="$HOME/.local/vids"
+
+# YouTube stream key
+echo "Stream Key: "
+read stream_key
+
+# Enable microphone
+echo "Enable microphone (y/n): "
+read enable_mic
+
+# Find the highest number used in existing filenames
+MAX_NUMBER=$(ls -1 "$TARGET_DIR"/*_vid.mkv 2>/dev/null | \
+	awk -F'[_]' '{print $1}' | \
+	awk -F/ '{print $NF}' | \
+	sort -n | \
+	tail -1)
+
+# Check if no files were found
+if [ -z "$MAX_NUMBER" ]; then
+	MAX_NUMBER=0
+fi
+
+# Next number
+NEXT_NUMBER=$((MAX_NUMBER + 1))
+
+# Filename format
+FILENAME="$TARGET_DIR/${NEXT_NUMBER}_vid.mkv"
+
+# Check if microphone is enabled
+# MIC_INPUT="-f alsa -i hw:0,0 -af 'afftdn=nf=-75'"
+if [ "$enable_mic" = "y" ] || [ "$enable_mic" = "Y" ] || [ -z "$enable_mic" ]; then
+	MIC_INPUT="-f alsa -i default -af 'afftdn=nf=-75'" # Default internal microphone device
+else
+	MIC_INPUT=""  # No microphone input
+fi
+
+# Take the screenshot and stream with the selected options
+sleep 2
+ffmpeg -f x11grab -video_size 1366x768 -i :0.0 $MIC_INPUT \
+	-c:v libx264 -preset veryfast \
+	-c:a aac -ar 44100 -b:a 128k -g 50 -f flv \
+	rtmp://a.rtmp.youtube.com/live2/$stream_key

@@ -1,0 +1,37 @@
+#!/bin/bash
+# Target directory
+TARGET_DIR="$HOME/.local/vids"
+
+# Check if the directory exists
+if [ ! -d "$TARGET_DIR" ]; then
+	mkdir -p "$TARGET_DIR"
+fi
+
+# Find the highest number used in existing filenames
+MAX_NUMBER=$(ls -1 "$TARGET_DIR"/*_vid.mkv 2>/dev/null | \
+	awk -F'[_]' '{print $1}' | \
+	awk -F/ '{print $NF}' | \
+	sort -n | \
+	tail -1)
+
+# Check if no files were found
+if [ -z "$MAX_NUMBER" ]; then
+	MAX_NUMBER=0
+fi
+
+# Next number
+NEXT_NUMBER=$((MAX_NUMBER + 1))
+
+# Filename format
+FILENAME="$TARGET_DIR/${NEXT_NUMBER}_vid.mkv"
+
+sleep 2 &&
+	ffmpeg -y \
+	-f x11grab \
+	-draw_mouse 0 \
+	-s 1366x768 \
+	-i :0.0 \
+	-f alsa -i default \
+	-af "afftdn=nf=-75" \
+	-c:v libx264 -r 30 -c:a flac \
+	"$FILENAME"

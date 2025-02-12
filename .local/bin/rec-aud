@@ -1,0 +1,35 @@
+#!/bin/bash
+# Target directory
+TARGET_DIR="$HOME/.local/audio"
+
+# Check if the directory exists
+if [ ! -d "$TARGET_DIR" ]; then
+	mkdir -p "$TARGET_DIR"
+fi
+
+# Find the highest number used in existing filenames
+MAX_NUMBER=$(ls -1 "$TARGET_DIR"/*_aud.mp3 2>/dev/null | \
+	awk -F'[_]' '{print $1}' | \
+	awk -F/ '{print $NF}' | \
+	sort -n | \
+	tail -1)
+
+# Check if no files were found
+if [ -z "$MAX_NUMBER" ]; then
+	MAX_NUMBER=0
+fi
+
+# Next number
+NEXT_NUMBER=$((MAX_NUMBER + 1))
+
+# Filename format
+FILENAME="$TARGET_DIR/${NEXT_NUMBER}_aud.mp3"
+
+# Record audio using ffmpeg (only audio, not video)
+sleep 2 &&
+	ffmpeg -y \
+	-f alsa -i default \
+	-af "afftdn=nf=-75" \
+	-ac 2 -ar 44100 -ab 192k \
+	-strict -2 \
+	"$FILENAME"

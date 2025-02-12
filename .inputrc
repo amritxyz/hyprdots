@@ -1,28 +1,39 @@
 $include /etc/inputrc
-# Prettyfi
+set editing-mode vi
+$if mode=vi
+
+set show-mode-in-prompt on
+set vi-ins-mode-string \1\e[6 q\2
+set vi-cmd-mode-string \1\e[2 q\2
+
+set keymap vi-command
+# these are for vi-command mode
+Control-l: clear-screen
+Control-a: beginning-of-line
+
+set keymap vi-insert
+# these are for vi-insert mode
+Control-l: clear-screen
+Control-a: beginning-of-line
+
+$endif
+
 set colored-stats On
 set colored-completion-prefix On
 
-# Completion settings
+# Completion
 set show-all-if-ambiguous on
 set completion-ignore-case on
 set completion-display-width 0
 set completion-query-items 1000
 
-# ^C no longer shows on C-c keypress
+# ^C
 set echo-control-characters off
 
-# Command history search
+# Command search
 "\e[A": history-search-backward
 "\e[B": history-search-forward
 
 # Move foreward/backward by word
 "\e[1;5D": backward-word
 "\e[1;5C": forward-word
-
-# Bash Keybindings
-# "\C-f":"cd $HOME/.config/"
-# "\C-b":"cd ..\n"
-# "\C-s": "\C-asudo \C-e"
-# "\C-h":"cd ~\n"
-# "\C-l": "clear_insert\n"

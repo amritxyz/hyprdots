@@ -13,6 +13,12 @@
 // My changes
 // *********************
 // ***************************************************************************************
+// Hardware acceleration
+user_pref("layers.acceleration.force-enabled", true);
+user_pref("media.hardware-video-decoding.force-enabled", true);
+user_pref("gfx.webrender.compositor", true);
+user_pref("gfx.webrender.compositor.force-enabled", true);
+user_pref("layers.offmainthreadcomposition.async-animations", false);
 // Set compact density
 user_pref("browser.uidensity", 1); // 0 = default, 1 = compact, 2 = touch
 //
@@ -816,7 +822,7 @@ user_pref("extensions.formautofill.creditCards.enabled", false); // [FF56+]
 // user_pref("alerts.useSystemBackend.windows.notificationserver.enabled", false);
 // -------------------------------------
 // Disable location bar using search
-user_pref("keyword.enabled", false);
+user_pref("keyword.enabled", true);
 // -------------------------------------
 // Force GPU sandboxing (Linux, default on Windows)
 user_pref("security.sandbox.gpu.level", 1);
@@ -1183,7 +1189,7 @@ user_pref("security.family_safety.mode", 0);
 // user_pref("javascript.use_us_english_locale", true); // [HIDDEN PREF]
 // -------------------------------------
 // Disable skipping DoH when parental controls are enabled [FF70+]
-user_pref("network.dns.skipTRR-when-parental-control-enabled", false)
+user_pref("network.dns.skipTRR-when-parental-control-enabled", false);
 //
 // FF123
 //

@@ -1,30 +1,30 @@
 * {
-    border: none;
-    border-radius: 0px;
-    font-family: "Cantarell";
-    font-weight: bold;
-    font-size: 11px;
-    min-height: 10px;
+	border: none;
+	border-radius: 0px;
+	font-family: "Cantarell";
+	font-weight: bold;
+	font-size: 11px;
+	min-height: 10px;
 }
 
 @import "theme.css";
 
 window#waybar {
-    background: @bar-bg;
+	background: @bar-bg;
 }
 
 tooltip {
-    background: @main-bg;
-    color: @main-fg;
-    border-radius: 7px;
-    border-width: 0px;
+	background: @main-bg;
+	color: @main-fg;
+	border-radius: 7px;
+	border-width: 0px;
 }
 #workspace button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
+	/* Use box-shadow instead of border so the text isn't offset */
+	box-shadow: inset 0 -3px transparent;
+	/* Avoid rounded borders under each button name */
+	border: none;
+	border-radius: 0;
 }
 
 #backlight,
@@ -59,81 +59,81 @@ tooltip {
 #custom-sr_end,
 #custom-rl_end,
 #custom-rr_end {
-    color: @main-fg;
-    background: @main-bg;
-    opacity: 1;
-    margin: 4px 0px 4px 0px;
-    padding-left: 4px;
-    padding-right: 9px;
+	color: @main-fg;
+	background: @main-bg;
+	opacity: 1;
+	margin: 4px 0px 4px 0px;
+	padding-left: 4px;
+	padding-right: 9px;
 }
 
 #workspaces,
 #taskbar {
-    padding: 0px;
+	padding: 0px;
 }
 #workspaces button:hover {
-    color: #5b5b5b;
-    box-shadow: inherit;
-    text-shadow: inherit;
-    background: @main-bg;
-    border: #000000;
+	color: #5b5b5b;
+	box-shadow: inherit;
+	text-shadow: inherit;
+	background: @main-bg;
+	border: #000000;
 }
 
 #workspaces button {
-    padding: 0px 0px 0px 0px;
-    color: @surface2;
-    margin: 4px 6px 4px 0px;
-    transition: color 200ms ease-in-out;
+	padding: 0px 0px 0px 0px;
+	color: @surface2;
+	margin: 4px 6px 4px 0px;
+	transition: color 200ms ease-in-out;
 }
 
 #workspaces button.selected {
-    color: #89b4fa;
+	color: #89b4fa;
 }
 
 #workspaces button.active {
-    color: #fc5353;
+	color: #fc5353;
 }
 
 #workspaces button.urgent {
-    color: #f38ba8;
+	color: #f38ba8;
 }
 
 .modules-left > widget:first-child > #workspaces {
-    margin-left: 2px;
+	margin-left: 2px;
 }
 
 #custom-r_end {
-    border-radius: 0px 9px 9px 0px;
-    margin-right: 9px;
-    padding-right: 3px;
+	border-radius: 0px 9px 9px 0px;
+	margin-right: 9px;
+	padding-right: 3px;
 }
 
 #custom-l_end {
-    border-radius: 9px 0px 0px 9px;
-    margin-left: 9px;
-    padding-left: 3px;
+	border-radius: 9px 0px 0px 9px;
+	margin-left: 9px;
+	padding-left: 3px;
 }
 
 #custom-sr_end {
-    border-radius: 0px;
-    margin-right: 9px;
-    padding-right: 3px;
+	border-radius: 0px;
+	margin-right: 9px;
+	padding-right: 3px;
 }
 
 #custom-sl_end {
-    border-radius: 0px;
-    margin-left: 9px;
-    padding-left: 3px;
+	border-radius: 0px;
+	margin-left: 9px;
+	padding-left: 3px;
 }
 
 #custom-rr_end {
-    border-radius: 0px 7px 7px 0px;
-    margin-right: 9px;
-    padding-right: 3px;
+	border-radius: 0px 7px 7px 0px;
+	margin-right: 9px;
+	padding-right: 3px;
 }
 
 #custom-rl_end {
-    border-radius: 7px 0px 0px 7px;
-    margin-left: 9px;
-    padding-left: 3px;
+	border-radius: 7px 0px 0px 7px;
+	margin-left: 9px;
+	padding-left: 3px;
 }

@@ -1,0 +1,70 @@
+{
+  "features": {
+    "inline_completion_provider": "none"
+  },
+  "assistant": {
+    "dock": "left",
+    "version": "2"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "project_panel": {
+    "dock": "right"
+  },
+  "theme": "Rosé Pine",
+  "base_keymap": "VSCode",
+  "buffer_font_family": "Hack",
+  "buffer_font_size": 13,
+  "vim_mode": true,
+  "relative_line_numbers": true,
+  "cursor_blink": false,
+  "scrollbar": {
+    "show": "never"
+  },
+  "buffer_line_height": {
+    "custom": 1.7
+  },
+  "terminal": {
+    "font_family": "Hack",
+    "font_size": 13,
+    "line_height": {
+      "custom": 1.7
+    }
+  },
+  "inlay_hints": {
+    "enabled": false
+  },
+  "lsp": {
+    "gopls": {
+      "initialization_options": {
+        "gofumpt": true,
+        "usePlaceholders": true,
+        "staticcheck": true,
+        "codelenses": {
+          "gc_details": true,
+          "generate": true,
+          "regenerate_cgo": true,
+          "tidy": true,
+          "upgrade_dependency": true,
+          "vendor": true
+        },
+        "analysis": {
+          "completeUnimported": true,
+          "staticcheck": true,
+          "unusedParams": true,
+          "unusedWrite": true
+        },
+        "hints": {
+          "assignVariableTypes": true,
+          "compositeLiteralFields": true,
+          "compositeLiteralTypes": true,
+          "constantValues": true,
+          "functionTypeParameters": true,
+          "parameterNames": true,
+          "rangeVariableTypes": true
+        }
+      }
+    }
+  }
+}

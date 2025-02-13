@@ -7,7 +7,7 @@
 PS1="\[$(tput bold)\]\[$(tput setaf 14)\][\[$(tput setaf 13)\]\u\[$(tput setaf 11)\]@\[$(tput setaf 12)\]\h \[$(tput setaf 9)\]\W\[$(tput setaf 14)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
 
 # LS_COLORS configuration
-export LS_COLORS='di=1;34:fi=0:ln=0;36:ex=0;32:'
+export LS_COLORS='di=1;34:fi=0:ln=0;36:ex=0;32:*.tar=0;33:*.gz=0;33:*.jpg=0;35:*.txt=0;37:'
 eval "$(dircolors -b)"
 
 # Default programs
@@ -43,7 +43,7 @@ alias torrent='deluge-gtk'
 alias rr='cd $HOME/.config/hypr && ls -AF'
 alias h='cd $HOME/ && ls -AF'
 alias cf='cd $HOME/.config && ls -AF'
-alias wal='cd $HOME/.local/share/void-wall && ls -AF'
+alias wal='cd $HOME/.local/share/wall && ls -AF'
 alias mu='cd $HOME/.local/music && ls -AF'
 alias aud='cd $HOME/.local/audio && ls -AF'
 alias dl='cd $HOME/.local/dl && ls -AF'

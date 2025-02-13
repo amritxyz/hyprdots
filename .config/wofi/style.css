@@ -2,20 +2,20 @@
 #input {
 margin: 0px;
 border: none;
-color: #d8dee9;
-background-color: #000000;
+color: #c4c4c4;
+background-color: #1e1e2e;
 }
 
 #inner-box {
 margin: 0px;
 border: none;
-background-color: #000000;
+background-color: #181825dd;
 }
 
 #outer-box {
 margin: 2px;
 border: none;
-background-color: #000000;
+background-color: #181825dd;
 }
 
 #scroll {
@@ -30,7 +30,7 @@ color: #c4c4c4;
 }
 
 #entry:selected {
-background-color: rgba(0, 0, 0, 0.1)
+background-color: #1e1e2e;
 }
 /* Add rounded corners to the Wofi window */
 #window {

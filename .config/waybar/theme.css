@@ -1,9 +1,9 @@
 /*@define-color bar-bg #1e1e2e;*/
-@define-color bar-bg #11111b;
-/*@define-color bar-bg rgba(0, 0, 0, 0);*/
+/*@define-color bar-bg #11111b;*/
+@define-color bar-bg rgba(0, 0, 0, 0);
 
-/*@define-color main-bg #11111b;*/
-@define-color main-bg #1e1e2e;
+@define-color main-bg #11111b;
+/*@define-color main-bg #1e1e2e;*/
 @define-color main-fg #cdd6f4;
 
 @define-color wb-act-bg #a6adc8;

@@ -72,7 +72,7 @@ tooltip {
 	padding: 0px;
 }
 #workspaces button:hover {
-	color: #5b5b5b;
+	color: #6c7086;
 	box-shadow: inherit;
 	text-shadow: inherit;
 	background: @main-bg;

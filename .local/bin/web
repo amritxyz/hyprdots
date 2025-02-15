@@ -13,6 +13,6 @@ firefox "$URL" &
 wait $!
 # Check if Firefox is still running
 if ! pgrep -x "firefox" > /dev/null; then
-    # If Firefox is not running, kill the HTTP server
-    pkill -f "$PROGRAM"
+	# If Firefox is not running, kill the HTTP server
+	pkill -f "$PROGRAM"
 fi

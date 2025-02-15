@@ -9,13 +9,13 @@ background-color: #1e1e2e;
 #inner-box {
 margin: 0px;
 border: none;
-background-color: #181825dd;
+background-color: transparent;
 }
 
 #outer-box {
 margin: 2px;
 border: none;
-background-color: #181825dd;
+background-color: transparent;
 }
 
 #scroll {

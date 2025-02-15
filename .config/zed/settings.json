@@ -16,7 +16,7 @@
   "theme": "Rosé Pine",
   "base_keymap": "VSCode",
   "buffer_font_family": "Hack",
-  "buffer_font_size": 11.0,
+  "buffer_font_size": 13.0,
   "vim_mode": true,
   "relative_line_numbers": true,
   "cursor_blink": false,

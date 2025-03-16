@@ -25,6 +25,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_RUNTIME_DIR="/run/user/$(id -u)"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export PYTHONSTARTUP="$HOME/.config/python/pythonrc"
+export XDG_SESSION_TYPE="wayland"
 
 # Shell options and settings
 shopt -s autocd

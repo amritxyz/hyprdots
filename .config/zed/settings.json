@@ -21,7 +21,7 @@
   "relative_line_numbers": true,
   "cursor_blink": false,
   "scrollbar": {
-    "show": "never"
+    "show": "auto"
   },
   "buffer_line_height": {
     "custom": 1.7

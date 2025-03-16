@@ -13,7 +13,7 @@
   "project_panel": {
     "dock": "right"
   },
-  "theme": "Rosé Pine",
+  "theme": "Ayu Dark",
   "base_keymap": "VSCode",
   "buffer_font_family": "Hack",
   "buffer_font_size": 13.0,

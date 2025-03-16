@@ -17,11 +17,14 @@ export TERMINAL_PROG="foot"
 export BROWSER="firefox"
 
 # Environment variables
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="$PATH:$HOME/.local/bin"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_RUNTIME_DIR="/run/user/$(id -u)"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
-export PYTHONSTARTUP=$HOME/.config/python/pythonrc
+export PYTHONSTARTUP="$HOME/.config/python/pythonrc"
 
 # Shell options and settings
 shopt -s autocd
@@ -70,7 +73,7 @@ alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
 alias mkdir='mkdir -p'
-alias zzz='sudo zzz'
+alias zzz='systemctl suspend'
 
 # Camera
 alias cam='mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)'

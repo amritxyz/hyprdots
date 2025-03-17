@@ -63,6 +63,7 @@ map zi extract
 # Basic Functions
 map . set hidden!
 map dd delete
+map du %du -sh "$f"
 
 # map u $trashy restore -r 0
 map dr $trashy restore

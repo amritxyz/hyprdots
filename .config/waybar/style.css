@@ -91,16 +91,16 @@ window#waybar {
 
 
 #clock {
-    color: @text;
+  color: @text;
 }
 
 #pulseaudio {
-    color: @mauve;
-    margin-right: 15px;
+  color: @mauve;
+  margin-right: 15px;
 }
 
 #pulseaudio.muted {
-    color: @surface2;
+  color: @surface2;
 }
 
 #network {
@@ -126,5 +126,11 @@ window#waybar {
 
 #clock {
     /*margin-left: 5px;*/
-    margin-right: 10px;
+    margin-right: 13px;
+}
+
+#custom-power {
+  color: @maroon;
+  font-size: 10px;
+  margin-right: 5px;
 }

@@ -4,7 +4,7 @@
 [[ $- != *i* ]] && return
 
 # Prompt configuration
-PS1="\[$(tput bold)\]\[$(tput setaf 14)\][\[$(tput setaf 13)\]\u\[$(tput setaf 11)\]@\[$(tput setaf 12)\]\h \[$(tput setaf 9)\]\W\[$(tput setaf 14)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
+PS1="\[$(tput setaf 12)\]\w \[$(tput setaf 9)\]󰁕 \[$(tput sgr0)\]"
 
 # LS_COLORS configuration
 export LS_COLORS='di=1;34:fi=0:ln=0;36:ex=0;32:*.tar=0;33:*.gz=0;33:*.jpg=0;35:*.txt=0;37:'

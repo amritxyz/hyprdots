@@ -7,28 +7,29 @@
 
 // positions generated based on config.ctl
 
-"modules-left": [
-  "hyprland/workspaces"
-],
-"modules-center": [
-  "hyprland/window"
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "hyprland/window"
   ],
   "modules-right": [
     "pulseaudio",
     "network",
     "battery",
-    "clock"
+    "clock",
+    "custom/power"
   ],
   "clock": {
     "tooltip-format": "{:%A, %B %d, %Y}",
     "format": "{:%H:%M}"
   },
-  "network": {
-    "format-wifi": "󰤨",
-    "format-disconnected": "󰤭",
-    "tooltip-format": "Connected to {essid}",
-    "on-click": "hyprctl dispatch exec '[float]' '$TERMINAL -e nmtui'"
-  },
+     "network": {
+        "format-wifi": "󰤨",
+        "format-disconnected": "󰤭",
+				"tooltip-format": "Connected to {essid}",
+				"on-click": "hyprctl dispatch exec '[float]' '$TERMINAL -e nmtui'"
+    },
   "idle_inhibitor": {
     "tooltip": false
   },
@@ -58,16 +59,17 @@
     "tooltip": false
   },
   "pulseaudio": {
-    "format": "{icon}",
-    "format-muted": "󰖁",
-    "format-icons": {
-      "default": ["", "", "󰕾"]
-    },
-    "tooltip-format": "{volume}% volume"
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon}",
+        "format-muted": "󰖁",
+        "format-icons": {
+          "default": ["", "", "󰕾"]
+        },
+        "tooltip-format": "{volume}% volume"
   },
   "custom/power": {
-    "format": "󰐥",
-    "on-click": "sleep 0.15 && powermenu"
+    "format": " ",
+    "on-click": "hyprlock"
   },
   "battery": {
     "states": {

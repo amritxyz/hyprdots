@@ -4,35 +4,22 @@
   "height": 20,
   "reload_style_on_change": true,
 
+  "modules-left": [ "hyprland/workspaces" ],
+  "modules-center": [ "hyprland/window" ],
+  "modules-right": [ "pulseaudio", "network", "battery", "clock", "custom/power" ],
 
-// positions generated based on config.ctl
-
-  "modules-left": [
-    "hyprland/workspaces"
-  ],
-  "modules-center": [
-    "hyprland/window"
-  ],
-  "modules-right": [
-    "pulseaudio",
-    "network",
-    "battery",
-    "clock",
-    "custom/power"
-  ],
   "clock": {
     "tooltip-format": "{:%A, %B %d, %Y}",
     "format": "{:%H:%M}"
   },
-     "network": {
-        "format-wifi": "󰤨",
-        "format-disconnected": "󰤭",
-				"tooltip-format": "Connected to {essid}",
-				"on-click": "hyprctl dispatch exec '[float]' '$TERMINAL -e nmtui'"
-    },
-  "idle_inhibitor": {
-    "tooltip": false
+
+  "network": {
+    "format-wifi": "󰤨",
+    "format-disconnected": "󰤭",
+    "tooltip-format": "Connected to {essid}",
+    "on-click": "hyprctl dispatch exec '[float]' '$TERMINAL -e nmtui'"
   },
+
   "cpu": {
     "format": "Cpu{usage:3}%",
     "interval": 1,
@@ -42,6 +29,7 @@
     },
     "tooltip": false
   },
+
   "memory": {
     "format": "Mem {}%",
     "interval": 1,
@@ -51,6 +39,7 @@
     },
     "tooltip": false
   },
+
   "temperature": {
     "format": "{temperatureC}°C",
     "interval": 1,
@@ -58,19 +47,22 @@
     "critical-threshold": 80,
     "tooltip": false
   },
+
   "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{icon}",
-        "format-muted": "󰖁",
-        "format-icons": {
-          "default": ["", "", "󰕾"]
-        },
-        "tooltip-format": "{volume}% volume"
+    // "scroll-step": 1, // %, can be a float
+    "format": "{icon}",
+    "format-muted": "󰖁",
+    "format-icons": {
+      "default": ["", "", "󰕾"]
+    },
+    "tooltip-format": "{volume}% volume"
   },
+
   "custom/power": {
     "format": " ",
     "on-click": "hyprlock"
   },
+
   "battery": {
     "states": {
       "warning": 20

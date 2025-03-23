@@ -13,7 +13,7 @@
 @import "colors.css";
 
 window#waybar {
-    /*background: #1e1e2e;*/
+    /*background-color: @crust;*/
     background-color: @bar-bg;
 }
 

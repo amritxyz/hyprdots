@@ -17,7 +17,7 @@
     "format-wifi": "󰤨",
     "format-disconnected": "󰤭",
     "tooltip-format": "Connected to {essid}",
-    "on-click": "hyprctl dispatch exec '[float]' '$TERMINAL -e nmtui'"
+    "on-click": "pkill nmtui || hyprctl dispatch exec '[float]' '$TERMINAL -e nmtui'"
   },
 
   "cpu": {

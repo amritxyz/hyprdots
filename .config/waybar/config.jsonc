@@ -17,7 +17,7 @@
     "format-wifi": "󰤨",
     "format-disconnected": "󰤭",
     "tooltip-format": "Connected to {essid}",
-    "on-click": "pkill nmtui || hyprctl dispatch exec '[float]' '$TERMINAL -e nmtui'"
+    //"on-click": "pkill -SIGKILL nmtui || hyprctl dispatch exec '[float]' 'footclient -e nmtui'"
   },
 
   "cpu": {
@@ -49,7 +49,7 @@
   },
 
   "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
+    //"scroll-step": 1, // %, can be a float
     "format": "{icon}",
     "format-muted": "󰖁",
     "format-icons": {

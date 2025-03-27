@@ -15,9 +15,10 @@
 
   "network": {
     "format-wifi": "󰤨",
+    "format-ethernet": "",
     "format-disconnected": "󰤭",
     "tooltip-format": "Connected to {essid}",
-    //"on-click": "pkill -SIGKILL nmtui || hyprctl dispatch exec '[float]' 'footclient -e nmtui'"
+    "tooltip-format-ethernet": "Connected to Ethernet"
   },
 
   "cpu": {
@@ -53,6 +54,9 @@
     "format": "{icon}",
     "format-muted": "󰖁",
     "format-icons": {
+      "headphone": "󰋋",
+      "hands-free": "󰋋",
+      "headset": "󰋋",
       "default": ["", "", "󰕾"]
     },
     "tooltip-format": "{volume}% volume"

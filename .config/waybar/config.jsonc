@@ -54,9 +54,6 @@
     "format": "{icon}",
     "format-muted": "󰖁",
     "format-icons": {
-      "headphone": "󰋋",
-      "hands-free": "󰋋",
-      "headset": "󰋋",
       "default": ["", "", "󰕾"]
     },
     "tooltip-format": "{volume}% volume"
